@@ -4,7 +4,7 @@ semantic_models:
   - name: sales
     description: |
       Sales fact table with one row per order item.
-      Contains all dimensions and metrics needed for sales analysis.
+      Contains all dimensions and measures needed for sales analysis.
     model: ref('fact_sales')
 
     defaults:
@@ -34,57 +34,73 @@ semantic_models:
     dimensions:
       - name: order_date
         type: time
+        expr: order_date
         type_params:
           time_granularity: day
 
       - name: customer_name
         type: categorical
+        expr: customer_name
 
       - name: customer_type
         type: categorical
+        expr: customer_type
 
       - name: product_name
         type: categorical
+        expr: product_name
 
       - name: product_type
         type: categorical
+        expr: product_type
 
       - name: location_name
         type: categorical
+        expr: location_name
 
       - name: is_food_item
         type: categorical
+        expr: is_food_item
 
       - name: is_drink_item
         type: categorical
+        expr: is_drink_item
 
       - name: is_food_order
         type: categorical
+        expr: is_food_order
 
       - name: is_drink_order
         type: categorical
+        expr: is_drink_order
 
     measures:
       - name: item_price
-        agg: sum
+        description: Sum of item price
         expr: item_price
+        agg: sum
 
       - name: item_cost
-        agg: sum
+        description: Sum of item cost
         expr: item_cost
+        agg: sum
 
       - name: item_profit
-        agg: sum
+        description: Sum of item profit
         expr: item_profit
+        agg: sum
 
       - name: item_profit_margin
-        agg: average
+        description: Average profit margin
         expr: item_profit_margin
+        agg: average
 
       - name: order_count
-        agg: count_distinct
+        description: Distinct orders
         expr: order_id
+        agg: count_distinct
 
       - name: order_total
-        agg: average
+        description: Average order total
         expr: order_total
+        agg: average
