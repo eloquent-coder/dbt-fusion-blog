@@ -1,0 +1,63 @@
+semantic_models:
+  - name: sales
+    description: |
+      Sales fact table with one row per order item.
+      Contains all dimensions and metrics needed for sales analysis.
+    model: ref('fact_sales')
+
+    defaults:
+      agg_time_dimension: order_date
+
+    entities:
+      - name: order_item
+        type: primary
+        expr: order_item_id
+
+      - name: order
+        type: foreign
+        expr: order_id
+
+      - name: customer
+        type: foreign
+        expr: customer_id
+
+      - name: product
+        type: foreign
+        expr: product_id
+
+      - name: location
+        type: foreign
+        expr: location_id
+
+    dimensions:
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+
+      - name: customer_name
+        type: categorical
+
+      - name: customer_type
+        type: categorical
+
+      - name: product_name
+        type: categorical
+
+      - name: product_type
+        type: categorical
+
+      - name: location_name
+        type: categorical
+
+      - name: is_food_item
+        type: categorical
+
+      - name: is_drink_item
+        type: categorical
+
+      - name: is_food_order
+        type: categorical
+
+      - name: is_drink_order
+        type: categorical

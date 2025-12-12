@@ -24,3 +24,5 @@ models:
     tableau:
       +materialized: table
       +schema: tableau
+flags:
+  require_generic_test_arguments_property: true

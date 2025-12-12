@@ -1,0 +1,54 @@
+metrics:
+  - name: total_revenue
+    description: Total revenue from all order items
+    type: simple
+    type_params:
+      measure:
+        name: item_price
+        agg: sum
+    semantic_model: sales
+
+  - name: total_cost
+    description: Total cost of supplies
+    type: simple
+    type_params:
+      measure:
+        name: item_cost
+        agg: sum
+    semantic_model: sales
+
+  - name: total_profit
+    description: Total profit from order items
+    type: simple
+    type_params:
+      measure:
+        name: item_profit
+        agg: sum
+    semantic_model: sales
+
+  - name: average_profit_margin
+    description: Average profit margin percentage
+    type: simple
+    type_params:
+      measure:
+        name: item_profit_margin
+        agg: average
+    semantic_model: sales
+
+  - name: order_count
+    description: Count of distinct orders
+    type: simple
+    type_params:
+      measure:
+        name: order_id
+        agg: count_distinct
+    semantic_model: sales
+
+  - name: average_order_value
+    description: Average order value
+    type: simple
+    type_params:
+      measure:
+        name: order_total
+        agg: average
+    semantic_model: sales
