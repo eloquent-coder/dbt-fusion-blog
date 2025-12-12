@@ -5,10 +5,9 @@ models:
     description: |
       Denormalized fact table optimized for Tableau analysis. 
       Contains one row per order item with all relevant dimensions and metrics.
-      This table combines data from orders, order_items, customers, products, and locations.
-    config:
-      meta:
-        owner: tableau-team
+    meta:
+      owner: Usman Ashraf
+      owner_email: usman.ashraf678@gmail.com
     columns:
       - name: order_item_id
         description: Unique identifier for each order item
