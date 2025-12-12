@@ -12,3 +12,4 @@ jaffle_shop:
       schema: PUBLIC
       threads: 4
       client_session_keep_alive: false
+      
