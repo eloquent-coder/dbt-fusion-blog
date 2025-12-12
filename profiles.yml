@@ -1,0 +1,14 @@
+jaffle_shop:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: JYHJXVK-VZ40424
+      user: AHMED
+      password: Megatron991191
+      role: ACCOUNTADMIN
+      database: DBTFUSION
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 4
+      client_session_keep_alive: false

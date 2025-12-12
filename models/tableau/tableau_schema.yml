@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: |
+      Denormalized fact table optimized for Tableau analysis. 
+      Contains one row per order item with all relevant dimensions and metrics.
+      This table combines data from orders, order_items, customers, products, and locations.
+    columns:
+      - name: order_item_id
+        description: Unique identifier for each order item
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: Foreign key to orders table
+      - name: product_id
+        description: Foreign key to products table
+      - name: customer_id
+        description: Foreign key to customers table
+      - name: customer_name
+        description: Name of the customer
+      - name: customer_type
+        description: Customer classification (new or returning)
+      - name: count_lifetime_orders
+        description: Total number of orders placed by this customer
+      - name: lifetime_spend
+        description: Total lifetime spend by customer
+      - name: product_name
+        description: Name of the product
+      - name: product_type
+        description: Type/category of the product
+      - name: product_price
+        description: Price of the product in dollars
+      - name: is_food_item
+        description: Boolean indicating if product is a food item
+      - name: is_drink_item
+        description: Boolean indicating if product is a drink item
+      - name: location_id
+        description: Foreign key to locations table
+      - name: location_name
+        description: Name of the store location
+      - name: tax_rate
+        description: Tax rate for the location
+      - name: order_date
+        description: Date when the order was placed
+      - name: order_total
+        description: Total order amount including tax
+      - name: order_cost
+        description: Total cost of supplies for the order
+      - name: item_price
+        description: Price of the individual order item
+      - name: item_cost
+        description: Cost of supplies for this order item
+      - name: item_profit
+        description: Profit for this order item (price - cost)
+      - name: item_profit_margin
+        description: Profit margin percentage for this order item
+
