@@ -7,6 +7,8 @@ models:
     owners:
       - name: Usman Ashraf
         email: usman.ashraf678@gmail.com
+    config:
+      group: finance   # 👈 THIS is the key addition
     columns:
       - name: order_item_id
         description: Unique identifier for each order item
