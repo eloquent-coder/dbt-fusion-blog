@@ -1,3 +1,5 @@
+version: 2
+
 semantic_models:
   - name: sales
     description: |
@@ -61,3 +63,28 @@ semantic_models:
 
       - name: is_drink_order
         type: categorical
+
+    measures:
+      - name: item_price
+        agg: sum
+        expr: item_price
+
+      - name: item_cost
+        agg: sum
+        expr: item_cost
+
+      - name: item_profit
+        agg: sum
+        expr: item_profit
+
+      - name: item_profit_margin
+        agg: average
+        expr: item_profit_margin
+
+      - name: order_count
+        agg: count_distinct
+        expr: order_id
+
+      - name: order_total
+        agg: average
+        expr: order_total

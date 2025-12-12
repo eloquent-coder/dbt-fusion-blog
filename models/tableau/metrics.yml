@@ -5,7 +5,6 @@ metrics:
     type_params:
       measure:
         name: item_price
-        agg: sum
     semantic_model: sales
 
   - name: total_cost
@@ -14,7 +13,6 @@ metrics:
     type_params:
       measure:
         name: item_cost
-        agg: sum
     semantic_model: sales
 
   - name: total_profit
@@ -23,7 +21,6 @@ metrics:
     type_params:
       measure:
         name: item_profit
-        agg: sum
     semantic_model: sales
 
   - name: average_profit_margin
@@ -32,7 +29,6 @@ metrics:
     type_params:
       measure:
         name: item_profit_margin
-        agg: average
     semantic_model: sales
 
   - name: order_count
@@ -41,7 +37,6 @@ metrics:
     type_params:
       measure:
         name: order_id
-        agg: count_distinct
     semantic_model: sales
 
   - name: average_order_value
@@ -50,5 +45,4 @@ metrics:
     type_params:
       measure:
         name: order_total
-        agg: average
     semantic_model: sales
