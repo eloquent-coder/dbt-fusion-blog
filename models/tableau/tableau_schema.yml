@@ -3,11 +3,10 @@ version: 2
 models:
   - name: fact_sales
     description: |
-      Denormalized fact table optimized for Tableau analysis. 
-      Contains one row per order item with all relevant dimensions and metrics.
-    meta:
-      owner: Usman Ashraf
-      owner_email: usman.ashraf678@gmail.com
+      Denormalized fact table optimized for Tableau analysis.
+    owners:
+      - name: Usman Ashraf
+        email: usman.ashraf678@gmail.com
     columns:
       - name: order_item_id
         description: Unique identifier for each order item
