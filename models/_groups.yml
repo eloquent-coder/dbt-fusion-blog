@@ -1,0 +1,7 @@
+# models/_groups.yml
+groups:
+  - name: finance
+    owner:
+      name: Usman Ashraf
+      email: usman.ashraf678@gmail.com
+    description: Finance & revenue models
